@@ -12,9 +12,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Display image tag
-      run: |
-        export TAG=$GITHUB_REF_NAME_$GITHUB_RUN_NUMBER
-        echo $TAG
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag qgis-server:$TAG
+      run: |
+        export TAG=${GITHUB_REF_NAME}_${GITHUB_RUN_NUMBER}
+        docker build . --file Dockerfile --tag qgis-server:$TAG
