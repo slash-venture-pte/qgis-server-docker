@@ -25,6 +25,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: mapogram/qgis-server:${{ env.TAG }}
+          tags: mapogram/qgis-server:${{ env.TAG }}, mapogram/qgis-server:latest
           cache-from: type=registry,ref=mapogram/qgis-server:buildcache
           cache-to: type=registry,ref=mapogram/qgis-server:buildcache,mode=max
