@@ -5,7 +5,7 @@ on:
     branches: ["master", "develop"]
 
 env:
-  TAG: ${{GITHUB_REF_NAME}}_${{GITHUB_RUN_NUMBER}}
+  TAG: ${{ env.GITHUB_REF_NAME }}_${{ env.GITHUB_RUN_NUMBER }}
 
 jobs:
   build:
