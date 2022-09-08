@@ -25,6 +25,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: mapogram/${{ env.TAG }}:latest
-          cache-from: type=registry,ref=mapogram/${{ env.TAG }}:buildcache
-          cache-to: type=registry,ref=mapogram/${{ env.TAG }}:buildcache,mode=max
+          tags: mapogram/gis-server:latest, mapogram/gis-server:${{ env.TAG }}
+          cache-from: type=registry,ref=mapogram/gis-server:${{ env.TAG }}:buildcache
+          cache-to: type=registry,ref=mapogram/gis-server:${{ env.TAG }}:buildcache,mode=max
